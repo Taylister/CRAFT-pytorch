@@ -87,11 +87,10 @@ def saveArea(img_file, boxes, dirname='./result/'):
         #img = np.array(img)
 
         # make result file list
-        filename, file_ext = os.path.splitext(os.path.basename(img_file))
+        filename = os.path.splitext(os.path.basename(img_file))[0] + ".txt"
 
         # result directory
-        res_file = dirname + filename + '.txt'
-        res_img_file = dirname + "res_" + filename + '.jpg'
+        res_file = os.path.join(dirname,filename)
 
         if not os.path.isdir(dirname):
             os.mkdir(dirname)
